@@ -2,6 +2,9 @@
 Crearemos cuatro hilos de procesos sincronizados que simularan la atencion de una fila de clientes en un banco atendidos por tres
 cajeros.
 
+Se recomienda investicar la clase Thread:
+https://www.youtube.com/watch?v=x6xEBkftxMA&t=4s
+
 Utiliaremos las clases de pilas y colas para hacer este procedimieto.
 
 Se recomienda investigar los metodos sinchronized(), wait() y notify() para la mejor comprencion de este ejemplo
