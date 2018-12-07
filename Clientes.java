@@ -1,18 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Hilos;
+Esta clase se ejecutara cada 5 segundos utilizando el metodo Ramdon()
+Utilizando el metodo synchronized sincronizaremos la fila de clientes la cual sera de tipo cola,
+esta clase resivira una cola vacia para ser llenada y el tamaño de clientes que se crearan.
 
+Utilizaremos el metodo Ramdon() para crear un valor aleatorio tipo double que sera equivalente aleatorio
+tiempo en que esta clase creara uno de los tres tipos de clientes.
+
+Estos clientes sera:
+
+* De 0 a 0.6 segundos un Cliente A
+* De 0.61 a 0.75 un Cliente B
+* Mayor a 0.75 un Cliente C
+
+Cada vez que cree un cliente este se almacenara en la cola y notificara mediante el metodo notify()
+a todos los procesos que estan en espera que se ha añadido un nuevo cliente para que vayan a atenderlo.
+ */
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Arismendys Marte
- */
 public class Clientes implements Runnable{
     Random Aleatorio =new Random();
     Random TiempoeAleatorio =new Random();

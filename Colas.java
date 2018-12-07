@@ -1,30 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Hilos;
+Las Colas son como una Lista o una pila, pero en estas el primer dato en entrar es el primero en salir,
+ademas las colas son igual a una lista doble porque conocen que nodo esta delante del otro y quien esta detras.
 
-/**
- *
- * @author Arismendys Marte
- */
+* El metodo push nos servira para introducir un nodo en la pila y lo convierte de inmediato en el primer valor de esta.
+* El metodo pop nos permite sacar el primer elemento de pila y al mismo tiempo nos va reduciendo el tamaño de la pila.
+* El metodo peek nos permite visializar cual es el primer valor de nuestra pila sin afectar el contenido de esta.
+* El metodo size lo utilizaremos para visializar el tamaño de la pila.
 
-/*
-Uso de Thread hilos y procesos simultaneos en java en java
-Cada cajero atendera una fila tres cajeros en total C1, C2, C3
-
-Lista de eventos o personas, cada cajero tendra un tiempo de 5 segundos
-Buscar el comando syncronized() y Random(), Notify(), Wait()
-Investigar condicion de carrera programacion en paralello en java
-
-P solo hara push() canda 1 a 5 segundos generando nuevos nodos, los tipos son A,B,C
-De 1-60% sera A, de 61-75% sera B, de 76-100% sera C
-Osea en random seria de 0-0.6 A, de 0.61-0.75 B y de >0.75 C
-Cada vez que procese un nodo al final del proceso cada cajero tendra una lista de los que atendio
-La suma de los tres debe ser igual al total de nodos que genero P
-Digitar cuantos usuarios se van a generar "Trabajaremos con un total de 100 nodos"
- Cada vez que P genere un nodo avisara a los cajeros que hay un nuevo nodo
+Cuando vaciamos una pila su tamaño final sera 0 debido a que el metodo pop reduce la cantidad de nodos restantes en la pila
+a medida que toma una nodo.
 */
 public class Colas {
     private Nodo head;

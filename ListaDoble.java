@@ -1,23 +1,32 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Hilos;
+Esta clase nos serve para crear una lista de nodos en la cual siempre conoceremos cual es el nodo siguiente al que apunta el
+nodo en que estamos, tambien se conoce como lista simple.
 
-/**
- *
- * @author Arismendys Marte
- */
+* El metodo getHead nos retorna el primer nodo de nuestra lista.
+* El metodo Agregar nos añade un nodo al final de la lista, pero al mismo tiempo le indica al ultimo nodo de la lista que debe 
+aputar hacia el nodo que le estamos añadiendo y nos va creando un contador de los nodos que hemos añadidos.
+* El metodo AgregarPrimero nos añade un nodo al inicio de la lista y al mismo tiempo le indica al nodo que estamos añadiendo
+que debe aputar hacia el nodo que anteriormente era quien encabezaba la lista.
+* El metodo get nos permite retornar un nodo de una posicion especifica de la lista al recibir un valor entero, su implementacion
+en otra clase para una variable tipo lista a la cual llamaremos l seria "l.get(valor del la posicion del nodo)", podemos acompañarlo
+del metodo getData de la clase nodo de la siguiente manera "l.get(1).getData()" de esta manera retornariamos dato almacenado en el
+nodo en la posicion indicada de la lista.
+* El metodo Eliminar nos permite eliminar un nodo de la lista y al mismo tiempo reduce el tamaño de la lista.
+* El metodo size nos retornara el tamaño de la lista.
+
+*/
 public class ListaDoble {
     private Nodo head;
     private int cant = 0;
-    private boolean circular = false;
     
-    ListaDoble (Nodo n){ head = n; }
+    ListaDoble (Nodo n){ 
+		head = n; 
+	}
     ListaDoble (){}
     
-    public Nodo getHead() {return head;}
+    public Nodo getHead() {
+		return head;
+		}
     public void Agregar (Nodo n){
         Nodo l = null, z = null;
         cant++;
@@ -39,7 +48,9 @@ public class ListaDoble {
             head = n;
         }
     }
-    public int size(){ return cant; }
+    public int size(){ 
+		return cant;
+		}
     public Nodo get(int pos){
         int i;
         Nodo l;
@@ -51,49 +62,7 @@ public class ListaDoble {
         }
         return null;
     }
-    public void BuscarPalabra (String Palabra, ListaDoble l){
-        int k = 0;
-        Nodo n;
-        
-        for (k = 0, n = head ; k < l.size() ; k++, n = n.getNext())
-        {
-            if (Palabra.equals((String) n.getData())){
-                System.out.print("Esta palabra está en el nodo: " + k + "\n");
-            }
-        }  
-    }
-//    public void Insertar (Nodo n){
-//        Nodo l, k;
-//        l = k = null;
-//        
-//        cant++;
-//        int obj = 0, h = 0, Nl = 0;
-//        
-//        obj = ((Estudiante)n.getData()).getMatricula();
-//        h = ((Estudiante)head.getData()).getMatricula();
-//
-//        if(obj <= h)
-//        {
-//            n.setNext(head); head.setBefore(n); head=n;
-//        }
-//        else
-//        {
-//            l = head;
-//            Nl = ((Estudiante)l.getData()).getMatricula();
-//            for( l = head; Nl <= obj && l.getNext()!= null; l = l.getNext()){
-//                Nl = ((Estudiante)l.getData()).getMatricula(); 
-//            }
-//                Nl = ((Estudiante)l.getData()).getMatricula(); 
-//                if(Nl <= obj && l.getNext() == null) { l.setNext(n); n.setBefore(l); }
-//                else
-//                {
-//                    for(k = head ; k.getNext() != l ; k = k.getNext());
-//                        k.setNext(n);
-//                        n.setNext(l);
-//                        n.setBefore(l.getBefore());
-//                }
-//        }
-//    }
+
     public void Eliminar (Nodo d){
         Nodo l;
         cant--;
@@ -108,38 +77,6 @@ public class ListaDoble {
             d.getNext().setBefore(d.getBefore());
         }
     }
-    public void Circular (){
-        Nodo l;
 
-        if (!circular){
-            circular = true;
 
-            for (l = head ; l.getNext() != null ; l = l.getNext());
-		l.setNext(head);
-		head.setBefore(l);
-
-                System.out.println("");
-                System.out.println("La lista se ha convertido en Lista Circular.");
-        }
-        else { System.out.println("La lista fué convertido en Lista Circular anteriormente."); }
-    }
-//    public void Vueltas (int num, ListaDoble m){
-//        Nodo l;
-//        int i, cont = 1;
-//        
-//        if (circular == true){
-//            while (cont <= num)
-//            {
-//                for (i = 0, l = head ; i <= m.size() ; l = l.getNext(), i++);
-//                    System.out.println("\033[31m"+"\nLa lista ha dado la vuelta número: " + cont+"\n");
-//                    Estudiante est2;
-//            for(int c=0;c<m.size();c++){
-//                est2 = ((Estudiante)(m.get(c)).getData());
-//                System.out.print("\033[31m"+est2.getMatricula()+" \033[32m"+est2.getNombre()+" "+est2.getApellido()+" "+est2.getCarrera()+"\n");
-//            }
-//                    cont++;
-//            }
-//        }
-//        else { System.out.println("La lista no es Circular."); }
-//    }
 }

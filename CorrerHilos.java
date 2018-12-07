@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Hilos;
 
 import java.util.Scanner;
+/*
+Leemos un valor tipo entero el cual determinara el tamaño de la fila de clientes
+que se creara.
 
-/**
- *
- * @author Arismendys Marte
+Crearemos tres hilos de procesos de tipo Cajero y un de tipo cliente, le mandaremos
+a cada proceso de cajero el nombre del cajero y luego ejecutaremos los cuatro procesos a la vez.
+
  */
 public class CorrerHilos {
     public static void main(String[] args){
