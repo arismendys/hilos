@@ -4,6 +4,7 @@ cajeros.
 
 Se recomienda investicar la clase Thread:
 https://www.youtube.com/watch?v=x6xEBkftxMA&t=4s
+https://www.youtube.com/watch?v=ZoCk8w86JlU
 
 Utiliaremos las clases de pilas y colas para hacer este procedimieto.
 
